@@ -1,3 +1,5 @@
 export const pathnames = Object.freeze({
-  main: '/',
+  firstTask: '/',
+  secondTask: '/secondTask',
+  thirdTask: '/thirdTask',
 });

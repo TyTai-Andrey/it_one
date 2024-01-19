@@ -7,13 +7,18 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { pathnames } from './utils';
 import './App.scss';
-import Main from '@pages/Main';
+
+import FirstTask from '@pages/FirstTask';
+import SecondTask from '@pages/SecondTask';
+import ThirdTask from '@pages/ThirdTask';
 
 const App = () => {
   return (
     <Routes>
-      <Route path={pathnames.main} element={<Main />} />
-      <Route path="*" element={<Navigate to={pathnames.main} replace />} />
+      <Route path={pathnames.firstTask} element={<FirstTask />} />
+      <Route path={pathnames.secondTask} element={<SecondTask />} />
+      <Route path={pathnames.thirdTask} element={<ThirdTask />} />
+      <Route path="*" element={<Navigate to={pathnames.firstTask} replace />} />
     </Routes>
   );
 };
