@@ -3,4 +3,5 @@ export const pathnames = Object.freeze({
   secondTask: '/secondTask',
   thirdTask: '/thirdTask',
   service: '/services/:id/details',
+  day: '/day/:date/details',
 });

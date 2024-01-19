@@ -1,0 +1,12 @@
+.root {
+  .buttons {
+    margin-bottom: 10px;
+
+    button:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  .input {
+    margin-bottom: 10px;
+  }
+}
