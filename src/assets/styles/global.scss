@@ -1,9 +1,14 @@
+:root {
+  --scrollbarWidth: 5px;
+  --scrollbarHeight: 5px;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Inter';
   &::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: var(--scrollbarWidth);
+    height: var(--scrollbarHeight);
     transition: 0.3s all;
   }
 

@@ -1,0 +1,16 @@
+.root {
+  border: 1px solid #ccc;
+  padding: 1em;
+
+  .header {
+    font-size: 2em;
+  }
+  .options {
+    font-size: 1em;
+    list-style: disc;
+    margin: 1em 0 1em 1em;
+  }
+  .text {
+    font-size: 1em;
+  }
+}
