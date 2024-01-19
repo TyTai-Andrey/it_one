@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import dayjs from 'dayjs';
 import { filter, find } from 'lodash';
 import { useNavigate } from 'react-router-dom';
@@ -10,11 +10,10 @@ import { getCalendarList } from '@bus/calendar/selectors';
 import { DayModel } from '@bus/calendar/interfaces';
 import { dateFormat } from '@utils/help';
 
-import type { BadgeProps, CalendarProps } from 'antd';
+import type { CalendarProps } from 'antd';
 import type { Dayjs } from 'dayjs';
 
 import styles from './ThirdTask.module.scss';
-import { CalendarMode } from 'antd/es/calendar/generateCalendar';
 
 export type ThirdTaskProps = {};
 
@@ -42,7 +41,6 @@ const getMonthData = (value: Dayjs, calendarList: DayModel[] | null) => {
 const ThirdTask: FC<ThirdTaskProps> = () => {
   const navigate = useNavigate();
   const calendarList = useSelector(getCalendarList);
-  const [mode, setMode] = useState<CalendarMode>('month');
 
   const monthCellRender = (value: Dayjs) => {
     const num = getMonthData(value, calendarList);
