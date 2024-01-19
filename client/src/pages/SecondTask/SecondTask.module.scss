@@ -1,2 +1,19 @@
 .root {
+  .list {
+    display: flex;
+    flex-direction: column;
+    li {
+      padding: 5px;
+      &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    a {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      color: #2c2c2c;
+    }
+  }
 }

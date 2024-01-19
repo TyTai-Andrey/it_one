@@ -88,12 +88,21 @@ module.exports = (env = {}) => {
         '@utils': path.resolve(__dirname, './src/utils'),
         '@components': path.resolve(__dirname, './src/components'),
         '@compositions': path.resolve(__dirname, './src/compositions'),
+        '@api': path.resolve(__dirname, './src/api'),
       },
     },
 
     devServer: {
       open: false,
       historyApiFallback: true,
+      proxy: [
+        {
+          context: ['/api'],
+          target: 'http://localhost:7070',
+          secure: false,
+          changeOrigin: true,
+        },
+      ],
     },
 
     plugins: [

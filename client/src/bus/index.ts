@@ -3,18 +3,16 @@ import { combineReducers } from 'redux';
 import { all, call } from 'redux-saga/effects';
 
 // Reducers
-import { nameReducer } from './name/reducer';
+import { servicesReducer } from './services/reducer';
 
 // Watchers
-import { watchName } from './name/watchers';
+import { watchServices } from './services/watchers';
 
 export const rootReducer = () =>
   combineReducers({
-    name: nameReducer,
+    services: servicesReducer,
   });
 
 export function* rootSaga() {
-  yield all([
-    call(watchName)
-  ]);
+  yield all([call(watchServices)]);
 }

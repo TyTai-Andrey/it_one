@@ -1,0 +1,16 @@
+.root {
+  .help {
+    margin-bottom: 10px;
+  }
+  .button {
+    margin-left: 10px;
+  }
+  .error {
+    width: max-content;
+    display: flex;
+
+    border-radius: 8px;
+    background: #f0b2b2;
+    padding: 10px 20px;
+  }
+}
