@@ -73,19 +73,13 @@ const ThirdTask: FC<ThirdTaskProps> = () => {
     return info.originNode;
   };
 
-  const onPanelChangeHandler = (_: Dayjs, mode: CalendarMode) => {
-    setMode(mode);
-  };
-
   return (
     <div className={styles.root}>
       <div className={styles.calendar}>
         <Calendar
           cellRender={cellRender}
-          mode={mode}
-          onPanelChange={onPanelChangeHandler}
-          onChange={(date) => {
-            if (mode === 'month')
+          onSelect={(date, mode) => {
+            if (mode.source === 'date')
               navigate(`/day/${date.format('DD-MM-YYYY')}/details`);
           }}
         />
