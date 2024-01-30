@@ -9,7 +9,7 @@ import {
 } from '@bus/services/selectors';
 import { Link } from 'react-router-dom';
 import { ErrorButton } from '@components/ErrorButton';
-import { List } from 'antd';
+import { Button, List, Space } from 'antd';
 
 export type SecondTaskProps = {};
 
@@ -30,6 +30,12 @@ const SecondTask: FC<SecondTaskProps> = () => {
 
   return (
     <div className={styles.root}>
+      <Space>
+        Кнопка обновления чтобы ошибку легче было поймать
+        <Button onClick={onRefreshHandler} className={styles.button}>
+          Повторить запрос
+        </Button>
+      </Space>
       {loading && <div>Loading...</div>}
 
       {error && !loading && <ErrorButton onClick={onRefreshHandler} />}

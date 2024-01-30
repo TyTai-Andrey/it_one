@@ -11,9 +11,14 @@ import {
 import { ErrorButton } from '@components/ErrorButton';
 import { Card } from './compositions/Card';
 import { EditCard } from './compositions/EditCard';
-import { Button } from 'antd';
+import { Button, Space as SpaceUI } from 'antd';
+import styled from 'styled-components';
 
 export type ServiceProps = {};
+
+const Space = styled(SpaceUI)({
+  display: 'flex',
+});
 
 const Service: FC<ServiceProps> = () => {
   const dispatch = useDispatch();
@@ -63,12 +68,12 @@ const Service: FC<ServiceProps> = () => {
   return (
     <div className={styles.root}>
       {!edit && (
-        <div className={styles.help}>
+        <Space>
           Кнопка обновления чтобы ошибку легче было поймать
           <Button onClick={onRefreshHandler} className={styles.button}>
             Повторить запрос
           </Button>
-        </div>
+        </Space>
       )}
       {loading && <div>Loading...</div>}
       {error && !loading && <ErrorButton onClick={onRefreshHandler} />}

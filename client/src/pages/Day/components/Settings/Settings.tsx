@@ -6,7 +6,7 @@ import {
   Input,
   Radio,
   RadioChangeEvent,
-  Space,
+  Space as SpaceUI,
 } from 'antd';
 
 import styles from './Settings.module.scss';
@@ -22,7 +22,7 @@ export type SettingsProps = {
   setValue: (value: React.SetStateAction<string | undefined>) => void;
 };
 
-const StyledSpace = styled(Space)({
+const Space = styled(SpaceUI)({
   display: 'flex',
 });
 
@@ -46,7 +46,7 @@ export const Settings: FC<SettingsProps> = ({
   );
 
   return (
-    <StyledSpace direction="vertical">
+    <Space direction="vertical">
       <Space className={styles.buttons}>
         <Button onClick={onBackHandler}>Назад</Button>
         <Button onClick={onCreateNotification}>Добавить</Button>
@@ -62,6 +62,6 @@ export const Settings: FC<SettingsProps> = ({
         onChange={onChangeInputHandler}
         placeholder="Введите напоминание"
       />
-    </StyledSpace>
+    </Space>
   );
 };
