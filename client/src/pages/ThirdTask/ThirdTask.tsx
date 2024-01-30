@@ -45,7 +45,7 @@ const ThirdTask: FC<ThirdTaskProps> = () => {
   const monthCellRender = (value: Dayjs) => {
     const num = getMonthData(value, calendarList);
     return num ? (
-      <div className="notes-month">
+      <div className="notes-month" key={value.format(dateFormat)}>
         <section>{num}</section>
         <span>Backlog number</span>
       </div>
@@ -55,9 +55,9 @@ const ThirdTask: FC<ThirdTaskProps> = () => {
   const dateCellRender = (value: Dayjs) => {
     const listData = getListData(value, calendarList);
     return (
-      <ul className="events">
+      <ul className={styles.events} key={value.format(dateFormat)}>
         {listData.map((item) => (
-          <li key={item.content}>
+          <li key={`${value.format(dateFormat)}_${item.id}`}>
             <Badge status={item.type} text={item.content} />
           </li>
         ))}

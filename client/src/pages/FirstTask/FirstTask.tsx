@@ -1,7 +1,8 @@
 import React, { FC, useCallback, useState } from 'react';
 import styles from './FirstTask.module.scss';
-import { fill, join, map } from 'lodash';
+import { fill, map } from 'lodash';
 import { Card } from '@components/Card';
+import { Button } from 'antd';
 
 export type FirstTaskProps = {};
 
@@ -36,12 +37,13 @@ const FirstTask: FC<FirstTaskProps> = () => {
   return (
     <div className={styles.root}>
       <div className={styles.buttons}>
-        <button onClick={addCard}>Добавить ещё</button>
-        <button onClick={removeLastCard}>Удалить последнюю</button>
+        <Button onClick={addCard}>Добавить ещё</Button>
+        <Button onClick={removeLastCard} disabled={!cards.length}>
+          Удалить последнюю
+        </Button>
       </div>
       <div className={styles.cards}>
         {map(cards, (i) => (
-          // должен быть id, я понимаю
           <Card key={i.header} {...i} />
         ))}
       </div>

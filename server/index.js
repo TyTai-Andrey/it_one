@@ -96,7 +96,7 @@ function getRandomInt(min, max) {
 }
 
 function theErrorIsComing(res) {
-  if (!(getRandomInt(0, 666) % 13)) {
+  if (!(getRandomInt(0, 666) % 2)) {
     console.log(`theErrorIsComing`);
     res.statusMessage = 'The error is coming.';
     res.statusCode = 500;

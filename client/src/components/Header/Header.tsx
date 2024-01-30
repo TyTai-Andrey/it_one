@@ -3,16 +3,18 @@ import styles from './Header.module.scss';
 import { NavLink } from 'react-router-dom';
 import { pathnames } from '@routes/App/utils';
 import classNames from 'classnames';
+import { Layout, Menu } from 'antd';
 
 export type HeaderProps = {};
 
-export const Header: FC<HeaderProps> = (props) => {
+export const Header: FC<HeaderProps> = () => {
   const getClassNameForNavLink = ({ isActive }: { isActive: boolean }) =>
     classNames(styles.link, {
       [styles.isActive]: isActive,
     });
+
   return (
-    <header className={styles.root}>
+    <Layout.Header className={styles.root}>
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li>
@@ -41,6 +43,6 @@ export const Header: FC<HeaderProps> = (props) => {
           </li>
         </ul>
       </nav>
-    </header>
+    </Layout.Header>
   );
 };

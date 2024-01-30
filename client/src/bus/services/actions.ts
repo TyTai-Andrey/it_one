@@ -4,7 +4,7 @@ import { createAction } from '@reduxjs/toolkit';
 // Types
 import { servicesTypes } from './types';
 
-import { ServiceModel } from './interfaces';
+import { ServiceModel, WithHandlers } from './interfaces';
 
 // bus/index.ts
 // services: servicesReducer,
@@ -46,5 +46,18 @@ export const servicesActions = {
   fetchCurrentServiceAsync: createAction(
     servicesTypes.FETCH_CURRENT_SERVICE_ASYNC,
     (id: string) => ({ payload: id }),
+  ),
+  fetchDeleteCurrentServiceAsync: createAction(
+    servicesTypes.FETCH_DELETE_CURRENT_SERVICE_ASYNC,
+    (payload: WithHandlers<{ id: string }>) => ({
+      payload,
+    }),
+  ),
+
+  fetchEditCurrentServiceAsync: createAction(
+    servicesTypes.FETCH_EDIT_CURRENT_SERVICE_ASYNC,
+    (payload: WithHandlers<{ body: ServiceModel }>) => ({
+      payload,
+    }),
   ),
 };

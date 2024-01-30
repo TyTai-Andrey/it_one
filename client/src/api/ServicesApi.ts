@@ -38,4 +38,34 @@ export default class ServicesApi {
         return { error: error.message };
       });
   }
+
+  static async deleteService(
+    id: string | number,
+  ): Promise<{ response: ServiceModel } | { error: string }> {
+    const client = BaseApi.getClient();
+
+    return client
+      .delete(`/api/services/${id}`)
+      .then((response: AxiosResponse<ServiceModel>) => ({
+        response: response.data,
+      }))
+      .catch((error: Error) => {
+        return { error: error.message };
+      });
+  }
+
+  static async editService(
+    data: ServiceModel,
+  ): Promise<{ response: ServiceModel } | { error: string }> {
+    const client = BaseApi.getClient();
+
+    return client
+      .post(`/api/services/${data.id}`, data)
+      .then((response: AxiosResponse<ServiceModel>) => ({
+        response: response.data,
+      }))
+      .catch((error: Error) => {
+        return { error: error.message };
+      });
+  }
 }

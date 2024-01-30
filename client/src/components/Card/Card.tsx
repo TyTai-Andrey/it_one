@@ -1,20 +1,26 @@
 import React, { FC } from 'react';
 import styles from './Card.module.scss';
 import { CardModel } from '@pages/FirstTask/FirstTask';
-import { map } from 'lodash';
+import { Card as CardUI, List } from 'antd';
+import styled from 'styled-components';
 
 export interface CardProps extends CardModel {}
 
+const StyledCard = styled(CardUI)({
+  ['.ant-card-body']: {
+    padding: 0,
+  },
+});
+
 export const Card: FC<CardProps> = ({ header, options, text }) => {
   return (
-    <div className={styles.root}>
-      <h1 className={styles.header}>{header}</h1>
-      <ul className={styles.options}>
-        {map(options, (i) => (
-          <li key={i}>{i}</li>
-        ))}
-      </ul>
+    <StyledCard title={header} className={styles.root}>
+      <List
+        className={styles.options}
+        dataSource={options}
+        renderItem={(item) => <List.Item key={item}>{item}</List.Item>}
+      />
       <p className={styles.text}>{text}</p>
-    </div>
+    </StyledCard>
   );
 };

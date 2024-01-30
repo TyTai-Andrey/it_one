@@ -1,33 +1,35 @@
 :root {
-  --heightHeader: 60px;
+  // --heightHeader: 60px;
 }
 
 .root {
-  width: 100%;
+  // width: 100%;
   height: var(--heightHeader);
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 
-  background: #ffc107;
+  background: #044685;
 
   .nav {
-    width: 50%;
-
     .list {
       display: flex;
-      justify-content: space-between;
 
       .link {
+        text-wrap: nowrap;
         text-decoration: none;
-        color: #2c2c2c;
+        color: #dadee0;
         font-size: 1.2em;
         font-weight: 600;
 
         &.isActive {
-          color: #1943ce;
+          color: #ffffff;
         }
+      }
+
+      li:not(:last-child) {
+        margin-right: 15px;
       }
     }
   }

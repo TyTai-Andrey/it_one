@@ -1,0 +1,12 @@
+.root {
+  width: max-content;
+  display: flex;
+
+  border-radius: 8px;
+  background: #f0b2b2;
+  padding: 10px 20px;
+
+  .button {
+    margin-left: 10px;
+  }
+}

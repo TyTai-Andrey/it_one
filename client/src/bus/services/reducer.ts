@@ -23,12 +23,12 @@ interface InitialState {
 const initialState: InitialState = {
   list: {
     data: null,
-    loading: true,
+    loading: false,
     error: false,
   },
   currentService: {
     data: null,
-    loading: true,
+    loading: false,
     error: false,
   },
 };
